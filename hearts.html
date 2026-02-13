@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>💖 Pluie de Cœurs 💖</title>
+<style>
+body{
+margin:0;
+height:100vh;
+background:linear-gradient(45deg,#ff4e50,#ff6f91,#ff9671,#ffc75f);
+background-size:400% 400%;
+animation:bg 12s infinite ease;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-family:'Comic Sans MS',cursive;
+}
+@keyframes bg{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+.heart{
+position:fixed;
+font-size:30px;
+animation:fall linear forwards;
+}
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+<body>
+<h1>💖 Isaline & Alou pour toujours 💖</h1>
+<script>
+function rain(){
+for(let i=0;i<10;i++){
+let e=document.createElement("div");
+e.className="heart";
+e.innerHTML="💖";
+e.style.left=Math.random()*100+"vw";
+e.style.animationDuration=(Math.random()*3+2)+"s";
+e.style.opacity=Math.random();
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),5000);
+}
+}
+setInterval(rain,200);
+</script>
+</body>
+</html>
